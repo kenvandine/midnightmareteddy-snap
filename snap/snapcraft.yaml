@@ -1,0 +1,38 @@
+name: midnightmareteddy
+summary: Shoot and survive
+description: |
+  You're in a dream...or maybe a nightmare! All of the toys have come alive and are chasing you. Fight them off and run to survive for as long as you can. Want the ultimate challenge? Try out Math Mode and use your number skills as a weapon to fight back the evil toys!
+version: '1.0'
+base: core22
+architectures:
+- amd64
+confinement: strict
+grade: stable
+
+apps:
+  midnightmareteddy:
+    extensions: [gnome]
+    command: /MidnightmareTeddy/MidnightmareTeddy.x86_64
+    plugs:
+      - audio-playback
+      - desktop
+      - desktop-legacy
+      - joystick
+      - network
+      - opengl
+      - wayland
+      - x11
+
+parts:
+  midnightmareteddy:
+    source: https://github.com/endless-network/MidnightmareTeddy_Binary/releases/download/v1.0/MidnightmareTeddy.zip
+    plugin: dump
+    override-prime: |
+      craftctl default
+      chmod +x $CRAFT_PRIME/MidnightmareTeddy/MidnightmareTeddy.x86_64
+  desktop-files:
+    plugin: nil
+    source: desktop-file
+    override-build: |
+      mkdir -p $CRAFT_PART_INSTALL/meta/gui
+      cp * $CRAFT_PART_INSTALL/meta/gui
