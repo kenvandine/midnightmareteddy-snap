@@ -15,7 +15,7 @@ license: Proprietary
 apps:
   midnightmareteddy:
     extensions: [gnome]
-    command: /MidnightmareTeddy/MidnightmareTeddy.x86_64
+    command: MidnightmareTeddy/MidnightmareTeddy.x86_64
     plugs:
       - audio-playback
       - desktop
