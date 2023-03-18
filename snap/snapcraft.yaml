@@ -10,6 +10,7 @@ confinement: strict
 grade: stable
 issues: https://github.com/kenvandine/midnightmareteddy-snap/issues
 contact: https://endlessstudios.com/
+license: Proprietary
 
 apps:
   midnightmareteddy:
